@@ -4,13 +4,13 @@
   --surface: #161b22;
   --surface-hover: #1c2128;
   --border: #30363d;
-  --border-hover: #58a6ff;
+  --border-hover: #3fb950;
   --text: #c9d1d9;
   --text-muted: #8b949e;
   --text-dim: #484f58;
-  --accent: #58a6ff;
-  --accent-hover: #79c0ff;
-  --accent-muted: #1f6feb;
+  --accent: #3fb950;
+  --accent-hover: #5cc96a;
+  --accent-muted: #2a7a46;
   --danger: #f85149;
   --radius: 8px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
