@@ -1,0 +1,34 @@
+schema: spec-driven
+
+context: |
+  Tech stack: HTML, vanilla JavaScript, CSS
+  Package manager: none
+  Framework: GitHub Pages static site
+
+  Product language:
+  - Write OpenSpec proposals and specs in user-facing product behavior language
+  - Requirements should describe the experience, observable behavior, and product contract
+  - Avoid implementation-negative SHALL statements when a positive user outcome can express the same rule
+  - Put internal mechanisms in design.md or tasks.md unless the mechanism is itself part of the user-facing contract
+
+  Cross-platform requirements:
+  - This site runs in all modern browsers
+  - Use semantic HTML and accessible markup
+  - Keep styles minimal and dependency-free
+
+rules:
+  specs:
+    - Include scenarios for browser behavior when dealing with DOM interactions
+    - Requirements involving user interaction must specify observable outcomes
+    - Prefer user-facing product behavior and observable outcomes over internal implementation mechanics
+    - Include HOW details only when the mechanism is part of the product contract
+    - If we generate artifacts, specify deletion/modification by explicit list lookup, not pattern matching
+  tasks:
+    - Include cross-browser verification as a task when changes involve DOM or CSS
+    - Include accessibility testing considerations
+  design:
+    - Document any platform-specific behavior or limitations
+    - Prefer semantic HTML and standard web APIs
+    - Use existing constants and lists - don't invent detection mechanisms
+    - Prefer explicit lookups over pattern matching or regex
+    - If we generate it, we track it by name in a constant
