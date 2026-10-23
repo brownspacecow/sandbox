@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} • {{ site.title }}</title>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="{{ '/' | relative_url }}" class="nav-brand">
+      <img src="{{ '/assets/images/brown-space-cow.svg' | relative_url }}" alt="Brown Space Cow">
+      <span>Sandbox</span>
+    </a>
+    <div class="nav-links">
+      <a href="{{ '/' | relative_url }}" class="nav-link{% if page.url == '/' %} active{% endif %}">Home</a>
+      {% assign posts = site.posts | sort: "date" | reverse %}
+      {% for post in posts %}
+        <a href="{{ post.url | relative_url }}" class="nav-link{% if page.url == post.url %} active{% endif %}">{{ post.title }}</a>
+      {% endfor %}
+      <a href="https://github.com/brownspacecow/sandbox" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="container">
+    {{ content }}
+
+    <footer>
+      <p>
+        Built with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> &bull;
+        Hosted at <code>brownspacecow.github.io/sandbox</code>
+      </p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
