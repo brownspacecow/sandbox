@@ -1,0 +1,14 @@
+title: Sandbox • brownspacecow
+description: A playground for experiments, automations, and open-source exploration.
+baseurl: "/sandbox"
+url: "https://brownspacecow.github.io"
+markdown: kramdown
+
+permalink: /content/:year-:month-:day-:title.html
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
