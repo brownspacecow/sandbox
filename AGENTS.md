@@ -39,6 +39,8 @@ Required sections, in this order:
 
 - Use sentence case for section titles.
 - Use bullet items (`•`), not `-` or `*`.
+- Put a blank line between every bullet item and between every section so
+  each story is easy to see on its own line.
 - Each bullet names what happened, why it matters, and ends with the
   source in brackets: `[Source Name](url)`.
 - Do not publish unverified information. If a source is JS-heavy,
