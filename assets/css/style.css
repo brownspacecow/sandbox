@@ -412,7 +412,11 @@ footer a:hover {
   }
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
+=======
+@media (max-width: 480px) {
+>>>>>>> origin/master
   .nav-toggle {
     display: flex;
   }
