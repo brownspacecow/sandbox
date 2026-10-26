@@ -20,10 +20,15 @@
     </button>
     <div class="nav-links">
       <a href="{{ '/' | relative_url }}" class="nav-link{% if page.url == '/' %} active{% endif %}">Home</a>
-      {% assign posts = site.posts | sort: "date" | reverse %}
-      {% for post in posts %}
-        <a href="{{ post.url | relative_url }}" class="nav-link{% if page.url == post.url %} active{% endif %}">{{ post.title }}</a>
-      {% endfor %}
+      <div class="nav-dropdown">
+        <a href="#" class="nav-link nav-dropdown-toggle{% if page.url contains '/content/' %} active{% endif %}">Daily Content ▾</a>
+        <div class="nav-dropdown-menu">
+          {% assign posts = site.posts | sort: "date" | reverse %}
+          {% for post in posts %}
+            <a href="{{ post.url | relative_url }}" class="nav-dropdown-item{% if page.url == post.url %} active{% endif %}">{{ post.title }}</a>
+          {% endfor %}
+        </div>
+      </div>
       <a href="https://github.com/brownspacecow/sandbox" class="nav-link" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
@@ -59,6 +64,19 @@
       link.addEventListener('click', function () {
         toggle.setAttribute('aria-expanded', 'false');
         menu.classList.remove('open');
+      });
+    });
+
+    // Toggle dropdown on mobile (click)
+    var dropdowns = document.querySelectorAll('.nav-dropdown');
+    dropdowns.forEach(function (dropdown) {
+      var toggleBtn = dropdown.querySelector('.nav-dropdown-toggle');
+      if (!toggleBtn) return;
+      toggleBtn.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+        }
       });
     });
   })();
